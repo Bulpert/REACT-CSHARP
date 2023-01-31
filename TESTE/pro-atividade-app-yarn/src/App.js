@@ -45,10 +45,28 @@ function App() {
 
       <div className='mt-3'>
         {atividades.map(atividade => (
-          <div key={atividade.id} className="card mb-2 shadow-sm" style={{width: "18rem"}}>
+          <div key={atividade.id} className="card mb-2 shadow-sm">
             <div className="card-body">
-              <h5 className="card-title">Atividade</h5>
+              <div className="d-flex justify-content-between">
+
+                <h5 className="card-title">
+                  <span className="badge bg-secondary me-1">
+                    {atividade.id}
+                  </span>
+                  - titulo
+                </h5>
+                <h6>Prioridade: <i className='far fa-smile'></i> Normal</h6>
+
+              </div>
               <p className="card-text">  {atividade.id} - {atividade.description}</p>
+              <div className="d-flex justify-content-end pt-2 m-0 border-top">
+
+                <button className="btn btn-outline-primary me-2 btn-sm">
+                  Editar
+                </button>
+
+                <button className="btn btn-outline-danger me-2 btn-sm">Deletar</button>
+              </div>
             </div>
           </div>
         ))}
